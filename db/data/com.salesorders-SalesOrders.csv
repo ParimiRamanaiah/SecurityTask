@@ -1,0 +1,11 @@
+ID,orderNumber,customer_ID,orderDate,deliveryDate,netAmount,taxAmount,totalAmount,currency_code,status,statusText,priority,priorityText,criticality,createdAt,createdBy,modifiedAt,modifiedBy
+1,ORD001,1,2023-11-15,2023-11-20,214.48,17.16,231.64,USD,SHIPPED,Shipped,2,Medium,3,2023-11-15 10:30:00,john.doe,2023-11-20 14:25:00,warehouse.team
+2,ORD002,3,2023-11-16,2023-11-22,74.97,6.00,80.97,USD,DELIVERED,Delivered,1,Low,2,2023-11-16 09:15:00,sarah.johnson,2023-11-23 08:45:00,sarah.johnson
+3,ORD003,5,2023-11-18,2023-11-25,609.39,48.75,658.14,USD,PROCESSING,Processing,3,High,4,2023-11-18 14:20:00,mike.wilson,2023-11-19 11:30:00,mike.wilson
+4,ORD004,2,2023-11-20,2023-11-28,783.95,62.72,846.67,USD,PENDING,Pending,2,Medium,3,2023-11-20 11:45:00,emily.chen,2023-11-20 11:45:00,emily.chen
+5,ORD005,7,2023-11-21,2023-11-27,389.97,31.20,421.17,USD,CONFIRMED,Confirmed,1,Low,2,2023-11-21 16:10:00,alex.thompson,2023-11-22 09:30:00,alex.thompson
+6,ORD006,4,2023-11-22,2023-11-29,179.90,14.39,194.29,USD,SHIPPED,Shipped,3,High,4,2023-11-22 13:25:00,maria.garcia,2023-11-28 10:15:00,warehouse.team
+7,ORD007,9,2023-11-23,2023-12-01,319.95,25.60,345.55,USD,PROCESSING,Processing,2,Medium,3,2023-11-23 08:50:00,david.kim,2023-11-24 14:40:00,david.kim
+8,ORD008,6,2023-11-24,2023-11-30,449.97,35.99,485.96,USD,PENDING,Pending,3,High,4,2023-11-24 10:35:00,jennifer.adams,2023-11-24 10:35:00,jennifer.adams
+9,ORD009,8,2023-11-25,2023-12-05,124.95,9.99,134.94,USD,DRAFT,Draft,1,Low,1,2023-11-25 15:20:00,robert.martinez,2023-11-25 15:20:00,robert.martinez
+10,ORD010,10,2023-11-26,2023-12-03,275.98,22.08,298.06,USD,CONFIRMED,Confirmed,2,Medium,3,2023-11-26 09:55:00,chris.evans,2023-11-27 13:45:00,chris.evans

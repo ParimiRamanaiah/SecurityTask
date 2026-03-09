@@ -1,0 +1,11 @@
+ID,customerNumber,name,country,city,createdAt,createdBy,modifiedAt,modifiedBy
+1,CUST001,Acme Corporation,USA,New York,2023-01-15 09:30:00,john.doe,2023-01-15 09:30:00,john.doe
+2,CUST002,Globex Industries,Canada,Toronto,2023-02-20 14:45:00,jane.smith,2023-03-10 11:20:00,jane.smith
+3,CUST003,Initech,USA,Austin,2023-03-05 10:15:00,robert.johnson,2023-04-12 16:30:00,mary.williams
+4,CUST004,Umbrella Corporation,UK,London,2023-04-10 08:00:00,sarah.davis,2023-04-10 08:00:00,sarah.davis
+5,CUST005,Stark Enterprises,USA,Los Angeles,2023-05-22 13:20:00,mike.brown,2023-06-05 09:45:00,mike.brown
+6,CUST006,Wayne Industries,Germany,Berlin,2023-06-18 11:30:00,lisa.miller,2023-07-01 14:15:00,tom.wilson
+7,CUST007,Oscorp,Japan,Tokyo,2023-07-25 09:00:00,kenji.tanaka,2023-07-25 09:00:00,kenji.tanaka
+8,CUST008,Cyberdyne Systems,USA,Chicago,2023-08-30 15:40:00,emily.clark,2023-09-14 10:30:00,emily.clark
+9,CUST009,BioGen Industries,France,Paris,2023-09-12 12:15:00,pierre.dupont,2023-10-03 13:50:00,pierre.dupont
+10,CUST010, Massive Dynamic,Canada,Vancouver,2023-10-19 16:20:00,amanda.wong,2023-11-07 11:10:00,amanda.wong

@@ -1,0 +1,11 @@
+ID,productCode,description,category,price,currency_code,createdAt,createdBy,modifiedAt,modifiedBy
+1,PRD001,Wireless Bluetooth Headphones with Noise Cancellation,Electronics,89.99,USD,2023-01-10 10:30:00,john.doe,2023-01-10 10:30:00,john.doe
+2,PRD002,Ergonomic Office Mesh Chair - Black,Furniture,249.50,USD,2023-02-15 14:20:00,sarah.johnson,2023-03-05 09:15:00,sarah.johnson
+3,PRD003,Stainless Steel Water Bottle 1L,Kitchenware,24.99,USD,2023-03-22 09:45:00,mike.wilson,2023-03-22 09:45:00,mike.wilson
+4,PRD004,4K Ultra HD Smart TV 55-inch,Electronics,599.99,USD,2023-04-05 11:15:00,emily.chen,2023-05-10 16:30:00,emily.chen
+5,PRD005,Yoga Mat with Carrying Strap - Eco Friendly,Sports,34.50,USD,2023-05-18 13:40:00,alex.thompson,2023-06-01 10:20:00,alex.thompson
+6,PRD006,Professional Chef's Knife 8-inch,Kitchenware,79.95,USD,2023-06-25 15:30:00,maria.garcia,2023-06-25 15:30:00,maria.garcia
+7,PRD007,USB-C Laptop Docking Station,Electronics,129.99,USD,2023-07-12 08:50:00,david.kim,2023-08-03 14:45:00,lisa.park
+8,PRD008,Memory Foam Pillow Set of 2,Home Goods,45.99,USD,2023-08-20 12:10:00,jennifer.adams,2023-08-20 12:10:00,jennifer.adams
+9,PRD009,Stainless Steel Coffee Maker 12-Cup,Kitchenware,89.95,USD,2023-09-14 10:00:00,robert.martinez,2023-10-05 11:30:00,robert.martinez
+10,PRD010,Adjustable Dumbbell Set 25kg,Fitness,199.99,USD,2023-10-28 16:15:00,chris.evans,2023-11-15 09:50:00,chris.evans

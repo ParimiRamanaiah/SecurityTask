@@ -1,0 +1,11 @@
+code,locale,name,descr
+en_US,en-US,English (US),American English
+en_GB,en-GB,English (UK),British English
+es_ES,es-ES,Spanish (Spain),European Spanish
+es_MX,es-MX,Spanish (Mexico),Mexican Spanish
+fr_FR,fr-FR,French (France),European French
+fr_CA,fr-CA,French (Canada),Canadian French
+de_DE,de-DE,German (Germany),Standard German
+ja_JP,ja-JP,Japanese (Japan),Japanese
+zh_CN,zh-CN,Chinese (China),Simplified Chinese
+pt_BR,pt-BR,Portuguese (Brazil),Brazilian Portuguese

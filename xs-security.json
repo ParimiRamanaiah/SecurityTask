@@ -1,0 +1,75 @@
+{
+  "xsappname": "myapp",
+  "tenant-mode": "dedicated",
+  "description": "Security profile of called application",
+  "scopes": [
+    {
+      "name": "uaa.user",
+      "description": "UAA"
+    },
+    {
+      "name": "$XSAPPNAME.SalesUser",
+      "description": "Sales user access"
+    },
+    {
+      "name": "$XSAPPNAME.MasterDataUser",
+      "description": "Master data access"
+    },
+    {
+      "name": "$XSAPPNAME.Admin",
+      "description": "Administrator full access"
+    }
+  ],
+  "role-templates": [
+    {
+      "name": "Token_Exchange",
+      "description": "UAA",
+      "scope-references": [
+        "uaa.user"
+      ]
+    },
+    {
+      "name": "SalesUser",
+      "description": "Sales service access",
+      "scope-references": [
+        "$XSAPPNAME.SalesUser"
+      ],
+      "attribute-references": [
+        "country"
+      ]
+    },
+     {
+      "name": "MasterDataUser",
+      "description": "Master data service access",
+      "scope-references": [
+        "$XSAPPNAME.MasterDataUser"
+      ]
+    },
+    {
+      "name": "Admin",
+      "description": "Full access to application",
+      "scope-references": [
+        "$XSAPPNAME.Admin"
+      ]
+    }
+  ],
+
+   "attributes": [
+    {
+      "name": "country",
+      "description": "User country",
+      "valueType": "string"
+    }
+  ],
+  "oauth2-configuration": {
+    "token-validity": 900,
+    "refresh-token-validity": 1800,
+    "redirect-uris": [
+     "https://*.applicationstudio.cloud.sap/**",
+     "https://*.us10-001.hana.ondemand.com/login/callback",
+     "https://*.cfapps.us10-001.hana.ondemand.com/**"
+    ],
+    "autoapprove": "false"
+   },
+   "xsenableasyncservice": "true"
+}
