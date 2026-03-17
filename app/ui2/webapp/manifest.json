@@ -1,18 +1,19 @@
 {
   "_version": "1.82.0",
   "sap.app": {
-    "id": "com.myfrontapp",
+    "id": "com.ram.ui2",
     "type": "application",
     "i18n": "i18n/i18n.properties",
     "applicationVersion": {
       "version": "0.0.1"
     },
-    "title": "{{salesApp}}",
+    "title": "{{appTitle}}",
+    "description": "{{appDescription}}",
     "resources": "resources.json",
     "sourceTemplate": {
       "id": "@sap/generator-fiori:lrop",
       "version": "1.20.4",
-      "toolsId": "057369cf-7bd8-4073-99da-b8213ac9a314"
+      "toolsId": "5cfb1783-344d-49c3-b370-d76202ac86dd"
     },
     "dataSources": {
       "mainService": {
@@ -23,8 +24,7 @@
           "odataVersion": "4.01"
         }
       }
-    },
-    "description": "{{salesApp}}"
+    }
   },
   "sap.ui": {
     "technology": "UI5",
@@ -60,7 +60,7 @@
       "i18n": {
         "type": "sap.ui.model.resource.ResourceModel",
         "settings": {
-          "bundleName": "com.myfrontapp.i18n.i18n"
+          "bundleName": "com.ram.ui2.i18n.i18n"
         }
       },
       "": {
@@ -110,27 +110,31 @@
                   }
                 }
               },
-              "initialLoad": "Enabled",
               "controlConfiguration": {
                 "@com.sap.vocabularies.UI.v1.LineItem": {
                   "tableSettings": {
-                    "quickVariantSelection": {
-                      "showCounts": true,
-                      "hideTableTitle": false,
-                      "paths": [
-                        {
-                          "annotationPath": "com.sap.vocabularies.UI.v1.SelectionVariant#AllOrders"
-                        },
-                        {
-                          "annotationPath": "com.sap.vocabularies.UI.v1.SelectionVariant#PendingOrders"
-                        },
-                        {
-                          "annotationPath": "com.sap.vocabularies.UI.v1.SelectionVariant#ApprovedOrders"
-                        }
-                      ]
-                    }
+                    "type": "ResponsiveTable"
                   }
                 }
+              },
+              "initialLoad": "Enabled",
+              "defaultTemplateAnnotationPath": "com.sap.vocabularies.UI.v1.SelectionPresentationVariant#ConfirmedOrders",
+              "views": {
+                "paths": [
+                  {
+                    "key": "ConfirmedOrders",
+                    "annotationPath": "com.sap.vocabularies.UI.v1.SelectionPresentationVariant#ConfirmedOrders"
+                  },
+                  {
+                    "key": "WaitedOrders",
+                    "annotationPath": "com.sap.vocabularies.UI.v1.SelectionPresentationVariant#WaitedOrders"
+                  },
+                  {
+                    "key": "AllOrders",
+                    "annotationPath": "com.sap.vocabularies.UI.v1.SelectionPresentationVariant#AllOrders"
+                  }
+                ],
+                "showCounts": true
               }
             }
           }
@@ -159,5 +163,3 @@
     }
   }
 }
-
-

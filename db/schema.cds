@@ -29,7 +29,7 @@ entity SalesOrders : managed {
   taxAmount    : Decimal(13,2);
   totalAmount  : Decimal(13,2);
   currency     : Currency;
-  status       : String(1);
+  status       : String(10);
   statusText   : String(20);
   priority     : String(1);
   priorityText : String(10);

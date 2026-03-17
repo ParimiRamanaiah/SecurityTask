@@ -66,9 +66,23 @@ modules:
       - commyfrontapp.zip
       name: commyfrontapp
       target-path: app/
+    - artifacts:
+      - comramui2.zip
+      name: comramui2
+      target-path: app/
 - name: commyfrontapp
   type: html5
   path: app/myfrontapp
+  build-parameters:
+    build-result: dist
+    builder: custom
+    commands:
+    - npm install
+    - npm run build:cf
+    supported-platforms: []
+- name: comramui2
+  type: html5
+  path: app/ui2
   build-parameters:
     build-result: dist
     builder: custom

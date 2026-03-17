@@ -20,7 +20,8 @@
     "watch-myfrontapp": "cds watch --open com.myfrontapp/index.html?sap-ui-xx-viewCache=false --livereload false",
     "undeploy": "cf undeploy MyApp --delete-services --delete-service-keys --delete-service-brokers",
     "build": "rimraf resources mta_archives && mbt build --mtar archive",
-    "deploy": "cf deploy mta_archives/archive.mtar --retries 1"
+    "deploy": "cf deploy mta_archives/archive.mtar --retries 1",
+    "watch-ui2": "cds watch --open com.ram.ui2/index.html?sap-ui-xx-viewCache=false --livereload false"
   },
   "private": true,
   "cds": {
@@ -82,6 +83,7 @@
     "app/*"
   ],
   "sapux": [
-    "app/myfrontapp"
+    "app/myfrontapp",
+    "app/ui2"
   ]
 }
