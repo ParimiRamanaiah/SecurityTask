@@ -46,7 +46,9 @@ UI.LineItem: [
     {
         $Type: 'UI.DataField',
         Label: 'Priority',
-        Value: priorityText
+        Value: priorityText,
+        Criticality:priority,
+        CriticalityRepresentation:#WithIcon
     }
 ]
  );

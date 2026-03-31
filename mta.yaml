@@ -70,6 +70,10 @@ modules:
       - comramui2.zip
       name: comramui2
       target-path: app/
+    - artifacts:
+      - comramui3.zip
+      name: comramui3
+      target-path: app/
 - name: commyfrontapp
   type: html5
   path: app/myfrontapp
@@ -83,6 +87,16 @@ modules:
 - name: comramui2
   type: html5
   path: app/ui2
+  build-parameters:
+    build-result: dist
+    builder: custom
+    commands:
+    - npm install
+    - npm run build:cf
+    supported-platforms: []
+- name: comramui3
+  type: html5
+  path: app/ui3
   build-parameters:
     build-result: dist
     builder: custom

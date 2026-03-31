@@ -21,7 +21,8 @@
     "undeploy": "cf undeploy MyApp --delete-services --delete-service-keys --delete-service-brokers",
     "build": "rimraf resources mta_archives && mbt build --mtar archive",
     "deploy": "cf deploy mta_archives/archive.mtar --retries 1",
-    "watch-ui2": "cds watch --open com.ram.ui2/index.html?sap-ui-xx-viewCache=false --livereload false"
+    "watch-ui2": "cds watch --open com.ram.ui2/index.html?sap-ui-xx-viewCache=false --livereload false",
+    "watch-ui3": "cds watch --open com.ram.ui3/index.html?sap-ui-xx-viewCache=false --livereload false"
   },
   "private": true,
   "cds": {
@@ -84,6 +85,7 @@
   ],
   "sapux": [
     "app/myfrontapp",
-    "app/ui2"
+    "app/ui2",
+    "app/ui3"
   ]
 }
