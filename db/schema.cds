@@ -35,6 +35,11 @@ entity SalesOrders : managed {
   priorityText : String(10);
   criticality  : Integer;
   items        : Composition of many SalesOrderItems on items.order = $self;
+  // @UI.Hidden
+  // virtual isSalesUser : Boolean;
+  // actionHidden: Boolean ;
+  // actionShow: Boolean;
+
 }
 
 entity SalesOrderItems {
@@ -47,3 +52,9 @@ entity SalesOrderItems {
   netAmount  : Decimal(13,2);
   currency   : Currency;
 }
+
+@odata.singleton
+entity FeatureControl {
+        operationHidden : Boolean;
+        operationEnabled : Boolean;
+    }

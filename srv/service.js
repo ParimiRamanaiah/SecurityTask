@@ -1,11 +1,11 @@
 const cds = require('@sap/cds');
-const { approveOrder } = require('./handlers/approveOrder')
+const { approveOrder, rejectOrder, confirmOrder } = require('./handlers/approveOrder')
 const { getTotalOrders } = require('./handlers/getTotalOrders');
 const { SELECT } = require('@sap/cds/lib/ql/cds-ql');
 
 
 module.exports = cds.service.impl(async function () {
-  const { SalesOrders } = cds.entities('com.salesorders');
+  const { SalesOrders, FeatureControl } = cds.entities('com.salesorders');
 
   //const salesAndItems = await SELECT.from(SalesOrders).expand('items'); //.expand() is not a valid CAP Query API method.
 
@@ -74,17 +74,53 @@ module.exports = cds.service.impl(async function () {
   }
   ).where({statusText : 'Confirmed'});
 
-  console.log("filteredData",JSON.stringify(filteredData,null,2));
-  console.log("filteredData",filteredData.length);
+  //console.log("filteredData",JSON.stringify(filteredData,null,2));
+  //console.log("filteredData",filteredData.length);
 
 
 
   this.on('approveOrder', async (req) => {
-    await approveOrder();
+    //console.log(req.data);
+    await approveOrder(req);
   });
 
   this.on('getTotalOrders', async (req) => {
-    await getTotalOrders();
+    await getTotalOrders(req);
   });
+
+  this.on('reject',async(req)=>{
+    await rejectOrder(req)
+  })
+
+  this.on('confirm',async(req)=>{
+    console.log("req",req);
+    await confirmOrder(req);
+  })
+
+  // this.after('READ','SalesOrders',(each,req)=>{
+  //   // console.log("hello");
+  //   // console.log(req.user);
+  //   each.isSalesUser = 'true';//req.user.is('SalesUser');
+  //   // console.log(each.isSalesUser);
+  // })
+
+  this.on('normalAction', async(req)=>{
+    //console.log(req.user);
+    if(!req.user.is('SalesUser')){
+      req.reject(403,'You are not the concerned person to do this. Please contact admin!!');
+    }
+  })
+
+  this.on('READ','FeatureControl',async(req)=>{
+    let operationHidden  = false;
+    if(req.user.is('Admin')){
+      operationHidden  = true;
+    }
+
+    return{
+      operationHidden :operationHidden ,
+      operationEnabled:!operationHidden 
+    }
+  })
 
 })

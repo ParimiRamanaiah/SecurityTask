@@ -6,6 +6,7 @@ using {com.salesorders as db} from '../db/schema';
 ]
 service SalesService @(path: '/odata/v4/sales') {
 
+  entity FeatureControl as projection on db.FeatureControl;
   @restrict: [
     {
       grant: 'READ',
@@ -26,7 +27,13 @@ service SalesService @(path: '/odata/v4/sales') {
       where: 'country = $user.attr.country'
     },
   ]
-  entity SalesOrders     as projection on db.SalesOrders;
+  entity SalesOrders     as projection on db.SalesOrders
+  actions{
+    action confirm() returns SalesOrders @restrict: [{
+    grant: 'EXECUTE',
+    to   : 'Admin'
+  }];
+  };
 
   @restrict: [
     {
@@ -44,6 +51,7 @@ service SalesService @(path: '/odata/v4/sales') {
   entity SalesOrderItems as projection on db.SalesOrderItems;
 
   // ACTION
+  // @requires: ['SalesUser']
   action   approveOrder(ID: Integer) returns String @restrict: [{
     grant: 'EXECUTE',
     to   : 'Admin'
@@ -56,6 +64,14 @@ service SalesService @(path: '/odata/v4/sales') {
       'SalesUser',
       'Admin'
     ]
+  }];
+
+  @requires:['Admin']
+  action normalAction() returns String;
+
+  action reject(ID: Integer) returns String @restrict: [{
+    grant: 'EXECUTE',
+    to   : 'Admin'
   }];
 
 }
